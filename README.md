@@ -1,1 +1,7 @@
-# Simple-Calculator
+# Simple Calculator
+```
+Includes "+", "-", "/" and "*"
+```
+
+## Live Preview
+Open [index.html](https://crsnrazvan84.github.io/Simple-Calculator/index.html)
