@@ -11,19 +11,46 @@
 </head>
 
 <body>
-    <h1>Simple Calculator</h1>
-    <form>
-        <p>Please enter 1st Number : <input type="number" id="firstNumber" /> </p>
-        <p>Please enter 2nd Number: <input type="number" id="secondNumber" /></p>
-        <input type="button" onclick="multiplyBy()" Value="Multiply" />
-        <input type="button" onClick="divideBy()" Value="Divide" />
-        <input type="button" onClick="sumBy()" value="Sum">
-        <input type="button" onclick="diffBy()" value="Diff">
-    </form>
+    <div class="calculator">
+        <form>
+            <input type="text" class="screen">
+        </form>
+        <div class="actions">
+            <div class="buttons">
+                <div class="button-row">
+                    <button class="button" data-num="*">*</button>
+                    <button class="button" data-num="/">/</button>
+                    <button class="button" data-num="-">-</button>
+                </div>
+                <div class="button-row">
+                    <button class="button" data-num="1">1</button>
+                    <button class="button" data-num="2">2</button>
+                    <button class="button" data-num="3">3</button>
+                </div>
+                <div class="button-row">
+                    <button class="button" data-num="1">4</button>
+                    <button class="button" data-num="2">5</button>
+                    <button class="button" data-num="3">6</button>
+                </div>
+                <div class="button-row">
+                    <button class="button" data-num="1">7</button>
+                    <button class="button" data-num="2">8</button>
+                    <button class="button" data-num="3">9</button>
+                </div>
+                <div class="button-row">
+                        <button class="button" data-num="1">C</button>
+                        <button class="button" data-num="2">0</button>
+                        <button class="button" data-num="3">.</button>
+                    </div>
+            </div>
+            <div class="side">
+                <button class="button" data-num="+">+</button>
+                <button class="button" data-num="=">=</button>
+            </div>
+        </div>
+    </div>
 
-    <p>Your Result is : 
-        <span id="result"></span>
-    </p>
+
 
     <script src="main.js"></script>
 
