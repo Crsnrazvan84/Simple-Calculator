@@ -19,6 +19,7 @@ body {
 .calculator {
     width: 350px;
     box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
+    border-radius: 6px;
 }
 
 form {
@@ -57,10 +58,9 @@ form {
     color: rgba(245, 245, 245, 0.904);
     font-size: 1.5rem;
     cursor: pointer;
-    transition: all 0.2s ease-in-out;
 }
 
-.button:hover {
+.button:active {
     opacity: 0.8;
 }
 
