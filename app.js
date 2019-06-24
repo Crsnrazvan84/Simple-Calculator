@@ -1,3 +1,4 @@
+//DOM elements
 const screen = document.querySelector('.screen');
 const buttons = document.querySelectorAll('.screen-input');
 const equalBtn = document.querySelector('.equal');
@@ -35,24 +36,21 @@ document.addEventListener('keydown', (e) => {
 });
 
 //backspace
-delBtn.addEventListener('click', () => {
+const backspace = () => {
     let a = screen.value;
     a = (a-(a%10))/10;
     if(a == 0) {
         a = "";
     }
     screen.value = a;
-   
+}
+
+delBtn.addEventListener('click', () => {
+    backspace();
 });
 
 document.addEventListener('keydown',(e) => {
     if (e.keyCode === 8) {
-        let a = screen.value;
-        a = (a-(a%10))/10;
-        screen.value = a;
+        backspace();
   }
 });
-
-percentBtn.addEventListener('click', () => {
-
-})
