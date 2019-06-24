@@ -4,16 +4,21 @@
     box-sizing: border-box;
 }
 
+body, html {
+    -webkit-tap-highlight-color: transparent;
+}
+
 body {
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: #24242438;
 }
 
 .calculator {
     width: 350px;
-
+    box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 }
 
 form {
@@ -27,8 +32,10 @@ form {
     background-color: #090909;
     border: none;
     outline: none;
-    color: whitesmoke;
+    color: rgba(245, 245, 245, 0.904);
     font-size: 2rem;
+    padding: 10px;
+    text-align: right;
 }
 
 .buttons {
@@ -47,14 +54,14 @@ form {
     background-color: #090909;
     border: none;
     outline: none;
-    color: #FCF9F5;
+    color: rgba(245, 245, 245, 0.904);
     font-size: 1.5rem;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
 }
 
 .button:hover {
-    opacity: 0.5;
+    opacity: 0.8;
 }
 
 .number {
@@ -63,10 +70,11 @@ form {
 }
 
 .equal {
-    border-radius:0 0 5px;
+    border-radius:0 0 5px 0;
 }
 
 .reset {
     border-radius:0 0 0 5px;
+    color: rgb(202, 33, 33);
 }
 
