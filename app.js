@@ -3,7 +3,7 @@ const buttons = document.querySelectorAll('.screen-input');
 const equalBtn = document.querySelector('.equal');
 const resetBtn = document.querySelector('.reset');
 const delBtn = document.querySelector('.del');
-
+const percentBtn = document.querySelector('.percent');
 
 //add values to screen
 buttons.forEach((button) => {
@@ -14,17 +14,45 @@ buttons.forEach((button) => {
 })
 
 //get value to screen
-equalBtn.addEventListener('click', function () {
-    var result = eval(screen.value);
+equalBtn.addEventListener('click', () => {
+    let result = eval(screen.value);
     screen.value = result;
 })
+
+screen.addEventListener('keypress', (e) => {
+    if (e.key === "Enter") {
+        screen.value = eval(screen.value);
+  }
+});
 
 //reset values
 resetBtn.addEventListener('click', () => {screen.value = ""});
 
+document.addEventListener('keydown', (e) => {
+    if (e.keyCode === 27) {
+        screen.value = "";
+  }
+});
+
 //backspace
 delBtn.addEventListener('click', () => {
-    var a = screen.value;
+    let a = screen.value;
     a = (a-(a%10))/10;
+    if(a == 0) {
+        a = "";
+    }
     screen.value = a;
+   
 });
+
+document.addEventListener('keydown',(e) => {
+    if (e.keyCode === 8) {
+        let a = screen.value;
+        a = (a-(a%10))/10;
+        screen.value = a;
+  }
+});
+
+percentBtn.addEventListener('click', () => {
+
+})
