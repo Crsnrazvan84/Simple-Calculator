@@ -2,7 +2,7 @@
 const screen = document.querySelector('.screen');
 const buttons = document.querySelectorAll('.screen-input');
 const equalBtn = document.querySelector('.equal');
-const resetBtn = document.querySelector('.reset');
+const resetBtn = document.querySelectorAll('.reset');
 const delBtn = document.querySelector('.del');
 const percentBtn = document.querySelector('.percent');
 
@@ -27,7 +27,9 @@ screen.addEventListener('keypress', (e) => {
 });
 
 //reset values
-resetBtn.addEventListener('click', () => {screen.value = ""});
+resetBtn.forEach((btn) => {
+    btn.addEventListener('click', () => {screen.value = ""});
+});
 
 document.addEventListener('keydown', (e) => {
     if (e.keyCode === 27) {
