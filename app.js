@@ -7,12 +7,17 @@ const delBtn = document.querySelector('.del');
 const percentBtn = document.querySelector('.percent');
 
 //check for screen input
+
 const checkScreen = () => {
-    document.addEventListener('keyup', () => {
-        if(screen.value === "NaN" || screen.value === "undefined" ){
-            screen.value = "ERROR";
-        }
-     })
+    const checkScreenInput = () =>{
+        () => {
+            if(screen.value === "NaN" || screen.value === "undefined" ){
+                screen.value = "ERROR";
+            }
+         }
+    }
+
+    document.addEventListener('keyup', checkScreenInput());
 }
 
 
@@ -26,10 +31,12 @@ const addToScreen = () => {
     });
     
     document.addEventListener('keypress', function myFunction(event) {
-        var x = event.keyCode;
-        var y = String.fromCharCode(x); 
-        screen.value += y;
-       
+        let x = event.keyCode;
+        let y = String.fromCharCode(x); 
+        const regex = new RegExp(/[0-9, -, +, /, *, %]/, 'g');;
+        if (y.match(regex)) {
+            screen.value += y;
+        }
     });
 }
 
