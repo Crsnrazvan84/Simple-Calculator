@@ -11,7 +11,7 @@ const percentBtn = document.querySelector('.percent');
 const checkScreen = () => {
     const checkScreenInput = () => {
         () => {
-            if (screen.value === "NaN" || screen.value === "undefined") {
+            if (screen.value === "NaN" || screen.value === undefined) {
                 screen.value = "ERROR";
             }
         }
@@ -25,30 +25,32 @@ const checkScreen = () => {
 const addToScreen = () => {
     buttons.forEach((button) => {
         button.addEventListener('click', function () {
-            let number = this.getAttribute('data-num');
+            const number = this.getAttribute('data-num');
             screen.value += number;
         })
     });
 
-    document.addEventListener('keypress', function myFunction(event) {
-
-        let x = event.keyCode;
-        let y = String.fromCharCode(x);
-        document.getElementById(y).style.animation = "pushBtn 0.2s ease";
-
-        function removeTransition(e) {
-            e.target.style.animation = "";
-        }
-        buttons.forEach(btn => btn.addEventListener('animationend', removeTransition));
-
+    document.addEventListener('keypress', (event) => {
+        const x = event.keyCode;
+        const y = String.fromCharCode(x);
         const regex = new RegExp(/[0-9, -, +, /, *, %]/, 'g');
         if (y.match(regex)) {
+            // animate numbers
+            document.getElementById(y).style.animation = "pushBtn 0.2s ease";
+            // add value to screen
             screen.value += y;
-        }
+        };
+        buttons.forEach(btn => btn.addEventListener('animationend', removeTransition));
     });
 }
 
-//get value to screen
+
+//remove animations
+const removeTransition = (e) => {
+    e.target.style.animation = "";
+}
+
+//evaluate screen value
 const evalScreen = () => {
     equalBtn.addEventListener('click', () => {
         let result = eval(screen.value);

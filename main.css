@@ -11,9 +11,16 @@ body, html {
 body {
     min-height: 100vh;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-evenly;
     align-items: center;
-    background-color: #24242438;
+    background-color: #687e8138;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    color: #E1580A;
+    font-size: 3rem;
 }
 
 .calculator {
@@ -73,8 +80,12 @@ form {
 }
 
 .reset {
+   
+    color: rgb(202, 33, 33) !important;
+}
+
+.bl {
     border-radius:0 0 0 5px;
-    color: rgb(202, 33, 33);
 }
 
 
