@@ -1,4 +1,5 @@
 //DOM elements
+const calculator = document.querySelector('.calculator');
 const screen = document.querySelector('.screen');
 const buttons = document.querySelectorAll('.screen-input');
 const equalBtn = document.querySelector('.equal');
@@ -25,6 +26,13 @@ screen.addEventListener('keypress', (e) => {
         screen.value = eval(screen.value);
   }
 });
+
+document.addEventListener('keypress', function myFunction(event) {
+    var x = event.keyCode;         // Get the Unicode value
+    console.log(x);
+    var y = String.fromCharCode(x);    // Convert the value into a character 
+   screen.value += y;
+  })
 
 //reset values
 resetBtn.forEach((btn) => {
