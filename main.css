@@ -21,7 +21,8 @@ body {
 }
 
 h1 {
-    color: #E1580A;
+    color: rgba(245, 245, 245, 0.904);
+    text-shadow: 3px 3px 5px rgba(0,0,0,0.75);
     font-size: 3rem;
 }
 
